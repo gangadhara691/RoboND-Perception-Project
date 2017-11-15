@@ -165,8 +165,7 @@ def pcl_callback(pcl_msg):
     # TODO: Convert PCL data to ROS messages
 	#Assign a color corresponding to each segmented object in scene
 	cluster_color = get_color_list(len(cluster_indices))
-	filename = 'cluster_color.pcd'
-	pcl.save(cluster_color, filename)
+	
 
 	color_cluster_point_list = []
 
@@ -180,6 +179,8 @@ def pcl_callback(pcl_msg):
 	#Create new cloud containing all clusters, each with unique color
 	cluster_cloud = pcl.PointCloud_PointXYZRGB()
 	cluster_cloud.from_list(color_cluster_point_list)
+	filename = 'cluster_cloud.pcd'
+	pcl.save(cluster_cloud, filename)
 	ros_cluster_cloud = pcl_to_ros(cluster_cloud)
 
     # TODO: Publish ROS messages

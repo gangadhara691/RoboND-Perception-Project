@@ -165,6 +165,8 @@ def pcl_callback(pcl_msg):
     # TODO: Convert PCL data to ROS messages
 	#Assign a color corresponding to each segmented object in scene
 	cluster_color = get_color_list(len(cluster_indices))
+	filename = 'cluster_color.pcd'
+	pcl.save(cluster_color, filename)
 
 	color_cluster_point_list = []
 
@@ -304,11 +306,6 @@ def pr2_mover(object_list):
             	else:
                 	# The red bin is on the robot's left
                 	ros_arm_to_use.data = 'left'  
-		box_pos = [0, 0, 0]     # Set a default box position
-            	for box_params in dropbox_list_param:
-		        if box_params['group'] == object_group:
-		            box_pos = box_params['position']
-		            break
             	# TODO: Add a random offset to the dropbox's position
 
             	# Assign the dropbox pose

@@ -1,12 +1,12 @@
 ### Writeup / README
 ## 3D PERCEPTION
 In this project we are using pr2 robot simulation using a RGBD camera, where we identify the objects present infront of the robot.
-![](robo.jpg)
+![](robo.JPG)
 
 ## Actual Camera input:
 
 This image conatins the objects on the table with noise
-![](original.jpg)
+![](original.JPG)
 
 ## Statistical Outlier Filtering 
 
@@ -16,7 +16,7 @@ The raw point cloud object from the PR2 simulation looks the image above. After 
 
 I have tuned the parameters for k = *20* and a standard deviation threshold of *0.1* provided the optimal outlier filtering. Here is the cloud after performing the outlier removal filter.
 
-![outlier removal filtering](stat.jpg)
+![outlier removal filtering](stat.JPG)
 
 ### Voxel Grid Filter
 
@@ -29,7 +29,7 @@ I used an X, Y, and Z voxel grid filter leaf size = *0.01*. Which retains the re
 
 ### Passthrough Filter
 
-![passthrough filter](pass_through.jpg)
+![passthrough filter](pass_through.JPG)
 
 To crop out the unnecessary parts from the Point cloud we use Passthrough filter.
 
@@ -73,7 +73,7 @@ MaxClusterSize=3000
 
 By assigning random colors to the isolated objects within the scene, I was able to generate this cloud of objects:
 
-![DBSCAN object cluster](cluster.jpg)
+![DBSCAN object cluster](cluster.JPG)
 
 ## Object Recognition
 

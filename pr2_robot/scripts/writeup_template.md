@@ -173,7 +173,7 @@ For the above tests:
 |Test|Identification of objects|%|
 |-----|--------|--|
 |1|3/3|100|
-|2|5/5|80|
+|2|5/5|100|
 |3|7/8|87.5|
 
 I conclude that in the last test glue was not identified we can further increase the training set and improve the accuracy.I will further work on this project for pick and place. 
